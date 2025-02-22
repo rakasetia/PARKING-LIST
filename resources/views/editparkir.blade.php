@@ -9,15 +9,14 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <style>
         body { font-family: Arial, sans-serif; }
-        .form-control-lg, .btn { transition: transform 0.3s ease-in-out; }
-        .form-control-lg:hover, .btn:hover { transform: scale(1.05); }
+        .form-control-lg, .btn-success { transition: transform 0.3s ease-in-out; }
+        .form-control-lg:focus, .btn-success:hover { transform: scale(1.05); }
         .card { border-radius: 15px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); }
-        .btn-primary, .btn-success { box-shadow: 2px 2px 10px rgba(0, 0, 255, 0.3); }
     </style>
 </head>
 <body>
 
-    <div class="bg-primary py-4 text-center" data-aos="fade-down">    
+    <div class="bg-primary py-4 text-center">    
         <h1 class="text-white">Edit Data Parkir</h1>
     </div>
 
@@ -30,7 +29,7 @@
 
         <div class="row d-flex justify-content-center">
             <div class="col-md-10">
-                <div class="card border-0 shadow-lg my-4" data-aos="zoom-in">
+                <div class="card border-0 shadow-lg my-4">
                     <div class="card-header bg-primary text-white text-center">
                         <h2>Edit Data</h2>
                     </div>
@@ -40,7 +39,7 @@
                         @method('PUT')
 
                         <div class="card-body">
-                            <div class="mb-3" data-aos="fade-right">
+                            <div class="mb-3">
                                 <label class="form-label h5">Foto Kendaraan</label>
                                 <input type="file" class="form-control-lg form-control @error('foto_kendaraan') is-invalid @enderror" name="foto_kendaraan">
                                 @if($parkir->foto_kendaraan)
@@ -51,7 +50,7 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-3" data-aos="fade-left">
+                            <div class="mb-3">
                                 <label class="form-label h5">Foto Pemilik</label>
                                 <input type="file" class="form-control-lg form-control @error('foto_pemilik') is-invalid @enderror" name="foto_pemilik">
                                 @if($parkir->foto_pemilik)
@@ -62,7 +61,7 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-3" data-aos="fade-up">
+                            <div class="mb-3">
                                 <label class="form-label h5">Jenis Kendaraan</label>
                                 <input value="{{ old('jenis_kendaraan', $parkir->jenis_kendaraan) }}" type="text" class="form-control-lg form-control @error('jenis_kendaraan') is-invalid @enderror" name="jenis_kendaraan">
                                 @error('jenis_kendaraan')
@@ -70,7 +69,7 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-3" data-aos="fade-up">
+                            <div class="mb-3">
                                 <label class="form-label h5">Nama Pemilik</label>
                                 <input value="{{ old('nama_pemilik', $parkir->nama_pemilik) }}" type="text" class="form-control-lg form-control @error('nama_pemilik') is-invalid @enderror" name="nama_pemilik">
                                 @error('nama_pemilik')
@@ -78,7 +77,7 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-3" data-aos="fade-up">
+                            <div class="mb-3">
                                 <label class="form-label h5">Plat Nomor</label>
                                 <input value="{{ old('plat_nomor', $parkir->plat_nomor) }}" type="text" class="form-control-lg form-control @error('plat_nomor') is-invalid @enderror" name="plat_nomor">
                                 @error('plat_nomor')
@@ -86,7 +85,7 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-3" data-aos="fade-up">
+                            <div class="mb-3">
                                 <label class="form-label h5">Warna Kendaraan</label>
                                 <input value="{{ old('warna_kendaraan', $parkir->warna_kendaraan) }}" type="text" class="form-control-lg form-control @error('warna_kendaraan') is-invalid @enderror" name="warna_kendaraan">
                                 @error('warna_kendaraan')
